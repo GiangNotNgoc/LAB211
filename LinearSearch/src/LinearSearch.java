@@ -74,29 +74,31 @@ public class LinearSearch {
 
     void displayIndexOfSearchNumber(int searchValue) {
         //search
-        List<Integer> list = searchByLinearSearch(searchValue);
+        /*List<Integer> list*/ int index = searchByLinearSearch(searchValue);
         //display
 
         //if =-1 => not found
-        if (list.isEmpty()) {
+        if (/*list.isEmpty()*/index == -1) {
             System.out.println("Not found");
         } else {
-            System.out.println("Index is: " + list.toString());
+            System.out.println("Index is: " + /*list.toString()*/index);
         }
     }
 
-    private List<Integer> searchByLinearSearch(int searchValue) {
+    private /*List<Integer>*/int searchByLinearSearch(int searchValue) {
         //array list
-        List<Integer> list = new ArrayList<>();
+        //List<Integer> list = new ArrayList<>();
         //lap tung phan tu
         for (int i = 0; i < array.length; i++) {
             int element = array[i];
             //kiem tra
             if (element == searchValue) {
                 //co thi tra ve index
-                list.add(i);
+                return i;
+                //list.add(i);
             }
         }
-        return list;
+        return -1;
+    //return list;
     }
 }
